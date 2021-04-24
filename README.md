@@ -1,9 +1,7 @@
-<h1 align='center'> Hi there 👋 </br> I'm Evan Delasota<h1>
-  <p>My name is Evan Delasota and i'm currently a full-time student studying Computer Science at CSUF. </br>
-    You can find me here:</br>
-    Personal:  &nbsp; &nbsp;<a href="https://www.evandelasota.com/" target="_blank"><img align="center" src="https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-external-link-48.png" alt="Personal Website"/></a> &nbsp; &nbsp;
-    LinkedIn:  &nbsp; &nbsp;<a href="https://www.linkedin.com/in/evan-delasota/" target="_blank"><img align="center" src="https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-linkedin-48.png" alt="LinkedIn"/></a> &nbsp; &nbsp;
-    Twitter:  &nbsp; &nbsp;<a href="https://twitter.com/EDelasota/" target="_blank"><img align="center" src="https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-twitter-48.png" alt="Twitter"/></a></p>
+## <div align="center">Hi there 👋 I'm Evan Delasota</div>
+##### I'm currently a full-time student studying Computer Science at CSUF.
+ ###### You can find me here
+ ###### Personal:  &nbsp; &nbsp;<a href="https://www.evandelasota.com/" target="_blank"><img align="center" src="https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-external-link-48.png" alt="Personal Website"/></a> &nbsp; &nbsp; LinkedIn:  &nbsp; &nbsp;<a href="https://www.linkedin.com/in/evan-delasota/" target="_blank"><img align="center" src="https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-linkedin-48.png" alt="LinkedIn"/></a> &nbsp; &nbsp; Twitter:  &nbsp; &nbsp;<a href="https://twitter.com/EDelasota/" target="_blank"><img align="center" src="https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-twitter-48.png" alt="Twitter"/></a>
 
 ### Languages
 ![Java](https://img.shields.io/badge/-Java-000?&logo=Java&logoColor=007396)
