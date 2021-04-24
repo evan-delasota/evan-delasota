@@ -1,7 +1,7 @@
 <h1 align='center'> Hi there 👋 </br> I'm Evan Delasota<h1>
   <p>
     My name is Evan Delasota and i'm currently a full-time student studying Computer Science at CSUF. </br>
-    You can find me on [![LinkedIn][3.2]][3]
+    You can find me on [![LinkedIn][1.2]][1]
   </p>
 
 ### Languages
@@ -21,8 +21,8 @@
 ## &#x1f4c8; GitHub Stats
 <a href="https://www.evandelasota.com/"><img height="150px" src="https://github-readme-stats.vercel.app/api?username=evan-delasota&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&line_height=21&title_color=ffffff&text_color=c9cacc&icon_color=2bbc8a&bg_color=1d1f21&theme=graywhite" /><img height="150px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=evan-delasota&hide_border=true&layout=compact&langs_count=7&title_color=ffffff&text_color=c9cacc&icon_color=fff&bg_color=1d1f21&theme=graywhite" /></a>
 
-[3.2]: https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/linkedin-3-16.png (LinkedIn icon without padding)
-[3]: https://www.linkedin.com/in/evan-delasota/
+[1.2]: https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-linkedin(1).svg
+[1]: https://www.linkedin.com/in/evan-delasota/
 
 <!--
 **evan-delasota/evan-delasota** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
