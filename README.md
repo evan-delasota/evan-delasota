@@ -21,7 +21,7 @@
 ## &#x1f4c8; GitHub Stats
 <a href="https://www.evandelasota.com/"><img height="150px" src="https://github-readme-stats.vercel.app/api?username=evan-delasota&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&line_height=21&title_color=ffffff&text_color=c9cacc&icon_color=2bbc8a&bg_color=1d1f21&theme=graywhite" /><img height="150px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=evan-delasota&hide_border=true&layout=compact&langs_count=7&title_color=ffffff&text_color=c9cacc&icon_color=fff&bg_color=1d1f21&theme=graywhite" /></a>
 
-[1.2]: https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-linkedin(1).svg
+[1.2]: https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-linkedin(1).png
 [1]: https://www.linkedin.com/in/evan-delasota/
 
 <!--
