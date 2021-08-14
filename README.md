@@ -6,14 +6,19 @@
 ![Java](https://img.shields.io/badge/-Java-000?&logo=Java&logoColor=007396)
 ![C++](https://img.shields.io/badge/-C++-000?&logo=c%2b%2b&logoColor=00599C)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-000?&logo=JavaScript)
-![Python](https://img.shields.io/badge/-Python-000?&logo=Python)
 ![SQL](https://img.shields.io/badge/-SQL-000?&logo=MySQL)
+![Python](https://img.shields.io/badge/-Python-000?&logo=Python)
 
 ### Technologies
 ![Linux](https://img.shields.io/badge/-Linux-000?&logo=Linux)
 ![Node.js](https://img.shields.io/badge/-Node.js-000?&logo=node.js)
-![React](https://img.shields.io/badge/-React-000?&logo=React)
 ![AWS](https://img.shields.io/badge/-AWS-000?&logo=Amazon-AWS&logoColor=F90)
+![Azure](https://img.shields.io/badge/-Azure-000?&logo=azure-devops)
+![MongoDB](https://img.shields.io/badge/-mongodb-000?&logo=mongodb)
+
+### Frameworks
+![Express](https://img.shields.io/badge/-Express-000?&logo=Express)
+![React](https://img.shields.io/badge/-React-000?&logo=React)
 
 
 ## &#x1f4c8; GitHub Stats
