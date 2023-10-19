@@ -2,7 +2,7 @@
 ##### A software engineer specializing in back end related technologies and cloud computing.
 ### Socials
 Personal Website:  &nbsp; &nbsp;<a href="https://www.evandelasota.com/" target="_blank"><img align="center" src="https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-external-link-48.png" alt="Personal Website"/></a> &nbsp; &nbsp; LinkedIn:  &nbsp; &nbsp;<a href="https://www.linkedin.com/in/evan-delasota/" target="_blank"><img align="center" src="https://raw.githubusercontent.com/evan-delasota/evan-delasota/main/icons8-linkedin-48.png" alt="LinkedIn"/></a>
-<a href="github.com/evan-delasota-ubi" target="_blank">Alternate Github Account </a>
+<a href="https://www.github.com/evan-delasota-ubi" target="_blank">Alternate Github Account </a>
 ### Languages
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
