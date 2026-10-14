@@ -45,7 +45,7 @@ I lead software development at **Temco Logistics**, a nationwide white-glove fin
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/evan-delasota/evan-delasota/output/activity-dark.svg"><img alt="Engineering activity over the last 12 months: a contribution heatmap and totals combining this account and my work account." src="https://raw.githubusercontent.com/evan-delasota/evan-delasota/output/activity-light.svg" width="100%"></picture>
 
-<sub>Contributions from this account and my work account, merged and refreshed daily by a [GitHub Action](https://github.com/evan-delasota/evan-delasota/blob/main/.github/workflows/profile-cards.yml). Work repositories are private, so the card shows counts only</sub>
+<sub>Contributions from this account and my work account, merged and refreshed daily by a GitHub Action. Work repositories are private, so the card shows counts only</sub>
 
 ### Credentials
 
