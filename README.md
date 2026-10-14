@@ -45,14 +45,12 @@ I lead software development at **Temco Logistics**, a nationwide white-glove fin
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/evan-delasota/evan-delasota/output/activity-dark.svg"><img alt="Engineering activity over the last 12 months: a contribution heatmap and totals combining this account and my work account." src="https://raw.githubusercontent.com/evan-delasota/evan-delasota/output/activity-light.svg" width="100%"></picture>
 
-<sub>Contributions from this account and my work account, merged and refreshed daily by a [GitHub Action](https://github.com/evan-delasota/evan-delasota/blob/main/.github/workflows/profile-cards.yml). Work repositories are private, so the card shows counts only — never repository or organization names.</sub>
+<sub>Contributions from this account and my work account, merged and refreshed daily by a [GitHub Action](https://github.com/evan-delasota/evan-delasota/blob/main/.github/workflows/profile-cards.yml). Work repositories are private, so the card shows counts only</sub>
 
 ### Credentials
 
 - **B.S. Computer Science** — California State University, Fullerton (2022)
 - **Microsoft Certified: Azure Fundamentals** — AZ-900
-- **AWS Certified Cloud Practitioner** — [verify on Credly](https://www.credly.com/badges/3c8316fa-bae1-4c17-a8af-88d8aa1a3eb1/public_url)
+- **AWS Certified Cloud Practitioner** — CLF-C02
 
 <br>
-
-<p align="center"><sub>Cards rendered by a zero-dependency generator in <a href="https://github.com/evan-delasota/evan-delasota/tree/main/cards">cards/</a>, using the same design tokens as <a href="https://www.evandelasota.com">evandelasota.com</a>.</sub></p>
