@@ -18,7 +18,7 @@ I lead software development at **Temco Logistics**, a nationwide white-glove fin
 
 - **Recently** — led the in-house rebuild of a vendor-managed workforce and payroll platform: 12 interdependent domains on one shared calculation engine.
 - **Day to day** — partner integrations on Azure Service Bus, Functions and Container Apps, plus edge-to-cloud pipelines on Cloudflare Workers.
-- **As a manager** — sprint planning, roadmap execution, structured code review, and the engineering standards the team builds against.
+- **As a manager** — sprint planning, roadmap execution, structured code review, team workshops, and the engineering standards the team builds against.
 - **Where the code is** — production work lives in private repositories on my [work account](https://github.com/evan-delasota-ubi). Sanitized architecture write-ups are on [evandelasota.com](https://www.evandelasota.com/#systems).
 
 <br>
