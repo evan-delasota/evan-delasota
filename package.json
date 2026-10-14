@@ -1,0 +1,14 @@
+{
+  "name": "evan-delasota-profile",
+  "private": true,
+  "description": "Generator for the SVG cards on github.com/evan-delasota. Zero runtime dependencies.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node cards/build.mjs",
+    "preview": "node cards/build.mjs --sample --out dist",
+    "test": "node --test 'cards/test/*.test.mjs'"
+  }
+}
