@@ -42,6 +42,30 @@ describe('cards', () => {
     assert.deepEqual(Object.keys(renderButtons(THEMES.dark)), LINKS.map((l) => l.id));
   });
 
+  // Live data is whatever GitHub returns, so the activity card must lay out
+  // at both extremes rather than fail the daily run.
+  const extreme = (work, personal, extra = {}) =>
+    mergeAccounts(
+      [
+        { login: 'w', label: 'Work', days: new Map(window.dates.map((d) => [d, work])), commits: 0, pullRequests: 0, reviews: 0, issues: 0, restricted: work * 365, ...extra },
+        { login: 'p', label: 'Personal', days: new Map(window.dates.map((d) => [d, personal])), commits: 0, pullRequests: 0, reviews: 0, issues: 0, restricted: 0 },
+      ],
+      window.dates,
+    );
+
+  for (const [name, data] of [
+    ['an empty year', extreme(0, 0)],
+    ['an empty year ending in a quiet day', mergeAccounts(sampleAccounts(ACCOUNTS, window.dates).map((a) => ({ ...a, days: new Map([...a.days].map(([d, c], i, all) => [d, i === all.length - 1 ? 0 : c])) })), window.dates)],
+    ['a maximal year', extreme(999, 999)],
+    ['a maximal year with full token detail', extreme(999, 99, { restricted: 0, commits: 98_765, pullRequests: 9_876, reviews: 9_876 })],
+  ]) {
+    it(`lays out the activity card for ${name}`, () => {
+      for (const theme of Object.values(THEMES)) {
+        assert.doesNotThrow(() => renderActivity(theme, data, { updated: window.dates.at(-1) }));
+      }
+    });
+  }
+
   it('never stamps live data as a sample, and always stamps sample data', () => {
     const live = renderActivity(THEMES.dark, merged, { updated: '2026-10-14' });
     const sample = renderActivity(THEMES.dark, merged, { updated: '2026-10-14', sample: true });

@@ -2,7 +2,7 @@
 // and work accounts combined. Work repositories are private, so the card only
 // ever shows counts — never a repository or organisation name.
 import { levelScale, summarize } from '../lib/activity.mjs';
-import { doc, fit, label, measure, r, text } from '../lib/svg.mjs';
+import { doc, label, measure, r, text } from '../lib/svg.mjs';
 
 const W = 1200;
 const PAD = 36;
@@ -117,17 +117,22 @@ export function renderActivity(theme, merged, { updated, sample = false }) {
   const longest = stats.longest.length
     ? [`${fmt(stats.longest.start)} – ${fmt(stats.longest.end)}`]
     : ['No streak yet'];
-  const current = stats.current.length ? [`Since ${fmt(stats.current.start)}`] : ['Starts with the next commit'];
+  const current = stats.current.length ? [`Since ${fmt(stats.current.start)}`] : ['Starts with the next commit', 'No active streak'];
   const peak = stats.busiest ? [`Peak: ${stats.busiest.count} on ${fmt(stats.busiest.date)}`, `Peak: ${stats.busiest.count}`] : ['—'];
   const days = (n) => [[num(n), null], [n === 1 ? ' day' : ' days', theme.cyan]];
 
   const barW = inner;
   const workW = (barW * workShare) / 100;
-  const splitLine = [
-    [`${work.label} ${num(work.total)}`, theme.cyan],
-    ['  ·  ', theme.inkDim],
-    [`${personal.label} ${num(personal.total)}`, theme.violet],
-  ];
+  // Labelled counts when they fit; bare counts otherwise (the caption and
+  // bar colours already say which is which).
+  const splitLine = [true, false]
+    .map((labelled) => [
+      [`${labelled ? `${work.label} ` : ''}${num(work.total)}`, theme.cyan],
+      ['  ·  ', theme.inkDim],
+      [`${labelled ? `${personal.label} ` : ''}${num(personal.total)}`, theme.violet],
+    ])
+    .find((parts) => measure(parts.map(([str]) => str).join(''), 'sans-600', 15) <= inner);
+  if (!splitLine) throw new Error('Work and personal totals do not fit their tile');
 
   const tiles = [
     tile(xs[0], tileY, tileW, 'Contributions', theme, value(xs[0], num(merged.total)) + sub(xs[0], totalSub)),
@@ -139,7 +144,7 @@ export function renderActivity(theme, merged, { updated, sample = false }) {
       theme,
       `<rect x="${r(xs[1] + 20)}" y="${tileY + 52}" width="${r(barW)}" height="12" rx="6" fill="${theme.violet}"/>` +
         (workW > 0 ? `<rect x="${r(xs[1] + 20)}" y="${tileY + 52}" width="${r(workW)}" height="12" rx="6" fill="${theme.cyan}"/>` : '') +
-        text(xs[1] + 20, subY, splitLine, { face: 'sans-600', size: fit(splitLine.map(([s]) => s).join(''), 'sans-600', 15, inner), fill: theme.inkMuted }),
+        text(xs[1] + 20, subY, splitLine, { face: 'sans-600', size: 15, fill: theme.inkMuted }),
     ),
     tile(xs[2], tileY, tileW, 'Longest streak', theme, value(xs[2], days(stats.longest.length)) + sub(xs[2], longest)),
     tile(xs[3], tileY, tileW, 'Current streak', theme, value(xs[3], days(stats.current.length)) + sub(xs[3], current)),
