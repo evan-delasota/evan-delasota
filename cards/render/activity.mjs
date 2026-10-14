@@ -2,7 +2,7 @@
 // and work accounts combined. Work repositories are private, so the card only
 // ever shows counts — never a repository or organisation name.
 import { levelScale, summarize } from '../lib/activity.mjs';
-import { doc, label, measure, r, text } from '../lib/svg.mjs';
+import { doc, fit, label, measure, r, text } from '../lib/svg.mjs';
 
 const W = 1200;
 const PAD = 36;
@@ -98,7 +98,10 @@ export function renderActivity(theme, merged, { updated, sample = false }) {
   const inner = tileW - 40;
   const valueY = tileY + 74;
   const subY = tileY + 96;
-  const value = (x, parts) => text(x + 20, valueY, parts, { face: 'mono-800', size: 32, fill: theme.inkPrimary });
+  const value = (x, parts) => {
+    const str = typeof parts === 'string' ? parts : parts.map(([part]) => part).join('');
+    return text(x + 20, valueY, parts, { face: 'mono-800', size: fit(str, 'mono-800', 32, inner), fill: theme.inkPrimary });
+  };
   const sub = (x, candidates) =>
     text(x + 20, subY, pick(candidates, 'sans-500', 15, inner), { face: 'sans-500', size: 15, fill: theme.inkMuted });
 
@@ -108,7 +111,9 @@ export function renderActivity(theme, merged, { updated, sample = false }) {
 
   const totalSub =
     merged.restricted > 0
-      ? [`${num(merged.restricted)} in private repos`, `${num(merged.restricted)} private`]
+      ? merged.restricted === merged.total
+        ? ['All in private repos', 'All private']
+        : [`${num(merged.restricted)} in private repos`, `${num(merged.restricted)} private`]
       : [
           `${num(merged.commits)} commits · ${num(merged.pullRequests)} PRs · ${num(merged.reviews)} reviews`,
           `${num(merged.commits)} commits · ${num(merged.reviews)} reviews`,
@@ -117,7 +122,12 @@ export function renderActivity(theme, merged, { updated, sample = false }) {
   const longest = stats.longest.length
     ? [`${fmt(stats.longest.start)} – ${fmt(stats.longest.end)}`]
     : ['No streak yet'];
-  const current = stats.current.length ? [`Since ${fmt(stats.current.start)}`] : ['Starts with the next commit', 'No active streak'];
+  const weekly = stats.weeklyAverage;
+  const weeklyValue = weekly >= 10 || weekly === 0 ? String(Math.round(weekly)) : weekly.toFixed(1);
+  const month = stats.busiestMonth;
+  const busiestMonth = month
+    ? [`Busiest: ${fmt(`${month.month}-01`, { month: 'short', year: 'numeric' })}`, `Busiest: ${fmt(`${month.month}-01`, { month: 'short' })}`]
+    : ['No activity yet'];
   const peak = stats.busiest ? [`Peak: ${stats.busiest.count} on ${fmt(stats.busiest.date)}`, `Peak: ${stats.busiest.count}`] : ['—'];
   const days = (n) => [[num(n), null], [n === 1 ? ' day' : ' days', theme.cyan]];
 
@@ -147,7 +157,7 @@ export function renderActivity(theme, merged, { updated, sample = false }) {
         text(xs[1] + 20, subY, splitLine, { face: 'sans-600', size: 15, fill: theme.inkMuted }),
     ),
     tile(xs[2], tileY, tileW, 'Longest streak', theme, value(xs[2], days(stats.longest.length)) + sub(xs[2], longest)),
-    tile(xs[3], tileY, tileW, 'Current streak', theme, value(xs[3], days(stats.current.length)) + sub(xs[3], current)),
+    tile(xs[3], tileY, tileW, 'Weekly average', theme, value(xs[3], [[weeklyValue, null], ['/wk', theme.cyan]]) + sub(xs[3], busiestMonth)),
     tile(
       xs[4],
       tileY,
@@ -183,7 +193,7 @@ export function renderActivity(theme, merged, { updated, sample = false }) {
     title: 'Engineering activity, last 12 months',
     desc:
       `${num(merged.total)} contributions across ${merged.perAccount.map((a) => `${a.label.toLowerCase()} (${num(a.total)})`).join(' and ')} accounts. ` +
-      `Longest streak ${stats.longest.length} days, current streak ${stats.current.length} days, ` +
+      `Longest streak ${stats.longest.length} days, about ${weeklyValue} a week, ` +
       `active on ${stats.activeDays} of ${merged.days.length} days.`,
     faces: ['sans-500', 'sans-600', 'mono-500', 'mono-700', 'mono-800'],
     css: grid.css,

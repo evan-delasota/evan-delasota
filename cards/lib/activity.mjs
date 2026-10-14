@@ -102,8 +102,8 @@ export function mergeAccounts(accounts, dates) {
 }
 
 /**
- * Streaks, active days and the busiest day. A zero for today does not break
- * the current streak, because today is not over yet.
+ * Streaks, active days, the busiest day and month, and the weekly average.
+ * A zero for today does not break the current streak; today is not over yet.
  */
 export function summarize(days) {
   let longest = { length: 0, start: null, end: null };
@@ -130,11 +130,21 @@ export function summarize(days) {
 
   const busiest = days.reduce((best, day) => (day.count > (best?.count ?? 0) ? day : best), null);
 
+  const months = new Map();
+  for (const day of days) {
+    const month = day.date.slice(0, 7);
+    months.set(month, (months.get(month) ?? 0) + day.count);
+  }
+  const [busiestMonth, busiestMonthCount] = [...months].reduce((best, entry) => (entry[1] > best[1] ? entry : best), [null, 0]);
+  const total = days.reduce((sum, day) => sum + day.count, 0);
+
   return {
     longest,
     current,
     activeDays: days.filter((day) => day.count > 0).length,
     busiest: busiest ? { date: busiest.date, count: busiest.count } : null,
+    busiestMonth: busiestMonth ? { month: busiestMonth, count: busiestMonthCount } : null,
+    weeklyAverage: days.length ? total / (days.length / 7) : 0,
   };
 }
 

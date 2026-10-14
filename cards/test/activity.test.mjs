@@ -65,11 +65,19 @@ describe('summarize', () => {
     assert.equal(summarize(days([1, 1, 0, 0])).current.length, 0);
   });
 
+  it('finds the busiest month and the weekly average', () => {
+    const stats = summarize(days([1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4], '2026-01-25'));
+    assert.deepEqual(stats.busiestMonth, { month: '2026-02', count: 28 });
+    assert.equal(stats.weeklyAverage, 17.5);
+  });
+
   it('handles a year with no activity', () => {
     const stats = summarize(days([0, 0, 0]));
     assert.equal(stats.longest.length, 0);
     assert.equal(stats.current.length, 0);
     assert.equal(stats.busiest, null);
+    assert.equal(stats.busiestMonth, null);
+    assert.equal(stats.weeklyAverage, 0);
   });
 });
 
