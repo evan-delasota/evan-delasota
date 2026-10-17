@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-10-17T12:56:44.382Z",
+  "sample": false,
+  "window": {
+    "from": "2025-10-18",
+    "to": "2026-10-17"
+  },
+  "total": 2561,
+  "accounts": [
+    {
+      "login": "evan-delasota-ubi",
+      "label": "Work",
+      "total": 2512
+    },
+    {
+      "login": "evan-delasota",
+      "label": "Personal",
+      "total": 49
+    }
+  ],
+  "visible": {
+    "commits": 4,
+    "pullRequests": 1,
+    "reviews": 0
+  },
+  "restricted": 2556,
+  "streaks": {
+    "longest": {
+      "length": 15,
+      "start": "2026-09-14",
+      "end": "2026-09-28"
+    },
+    "current": {
+      "length": 1,
+      "start": "2026-10-16"
+    }
+  },
+  "activeDays": 223,
+  "busiest": {
+    "date": "2025-11-03",
+    "count": 61
+  }
+}
